@@ -1,6 +1,6 @@
 //Icons
-const sunIcon =<HTMLLIElement> document.querySelector("#sun");
-const moonIcon =<HTMLLIElement> document.querySelector("#moon");
+const sunIcon = <HTMLLIElement>document.querySelector("#sun");
+const moonIcon = <HTMLLIElement>document.querySelector("#moon");
 
 //theme Vars
 const userTheme = localStorage.getItem("theme");
@@ -44,11 +44,5 @@ moonIcon.addEventListener("click", () => {
   themSwitch();
 });
 
-
 //invoke theme check on initial load
 themCheck();
-
-
-
-
-
