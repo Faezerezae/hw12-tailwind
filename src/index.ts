@@ -46,3 +46,17 @@ moonIcon.addEventListener("click", () => {
 
 //invoke theme check on initial load
 themCheck();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+window.addEventListener("scroll",scrollup)
+
+function scrollup(this: any, params:any) {
+  const scrollup=<HTMLLinkElement>document.getElementById("scrollup")
+  if (this.scrollY>=560) {
+    scrollup.classList.add("show-scroll")
+  }else{
+    scrollup.classList.remove("show-scroll")
+  }
+}
+

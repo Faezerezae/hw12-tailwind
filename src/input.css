@@ -5,3 +5,12 @@
 .display-none{
     @apply hidden;
 }
+
+.bi{
+ @apply cursor-pointer w-14 text-center text-2xl;
+}
+
+
+.show-scroll{
+    display:block;
+}

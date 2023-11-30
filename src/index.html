@@ -4,87 +4,732 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Tailwind CSS Template for App and Software</title>
     <link rel="stylesheet" href="../dist/output.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/favicon.png" />
   </head>
 
-  <body class="bg-blue-500 dark:bg-slate-900">
-    <div x-data="{ open: false }" class="bg-white shadow-md">
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <div class="text-blue-500 font-bold text-xl">Logo</div>
-        <button @click="open = !open" class="lg:hidden text-blue-500">
-          <div class="w-6 h-6 relative">
-            <svg
-              x-show="!open"
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
+  <body class="bg-white dark:bg-indigo-950 font-mulish relative">
+    <div class="grid gap-2 my-1">
+      <div
+        x-data="{ open: false }"
+        class="bg-white bg-opacity-90 dark:bg-indigo-950 dark:bg-opacity-90 backdrop-blur-sm sticky z-50 top-0 p-2 sm:p-0 px-6"
+      >
+        <div class="flex lg:justify-between container mx-auto px-6">
+          <div
+            class="flex justify-between lg:justify-start w-full md:gap-x-10 lg:gap-10 xl:gap-32 items-center"
+          >
+            <a href="index.html">
+              <img
+                src="./images/logo/logo-white.svg"
+                alt="logo"
+                class="hidden dark:block"
               />
-            </svg>
-
-            <svg
-              x-show="open"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
+              <img
+                src="./images/logo/logo.svg"
+                alt="logo"
+                class="dark:hidden"
               />
-            </svg>
+            </a>
+            <button
+              @click="open = !open"
+              class="sm:hidden text-slate-950 dark:text-slate-100 focus:outline-none focus:border-2 focus:border-violet-500 focus:ring-violet-500 block rounded-md focus:ring-1 p-2 font-bold"
+            >
+              <div class="w-6 h-6 relative focus-visible:border">
+                <svg
+                  x-show="!open"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <svg
+                  x-show="open"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div class="hidden lg:flex">
+              <ul
+                class="md:flex md:text-sm md:space-x-1 lg:space-x-10 xl:space-x-14 text-slate-400 items-center"
+              >
+                <li><a class="hover:text-violet-700" href="#">Features</a></li>
+                <li><a class="hover:text-violet-700" href="#">About</a></li>
+                <li><a class="hover:text-violet-700" href="#">Pricing</a></li>
+                <li><a class="hover:text-violet-700" href="#">Reviews</a></li>
+                <li><a class="hover:text-violet-700" href="#">Contact</a></li>
+                <li>
+                  <div class="relative inline-block group">
+                    <a
+                      class="cursor-pointer flex items-center justify-center group-hover:text-violet-700 lg:py-10"
+                      href="#"
+                    >
+                      Pages v
+                    </a>
+                    <div
+                      class="hidden absolute rounded-md shadow-2xl group-hover:block text-slate-950 dark:text-slate-50 bg-white dark:bg-darkBlue w-52 p-4 left-[-25px]"
+                    >
+                      <a
+                        href="#"
+                        class="flex items-center justify-start h-10 hover:text-violet-700"
+                        >Blog Grid Page</a
+                      >
+                      <a
+                        href="#"
+                        class="flex items-center justify-start h-10 hover:text-violet-700"
+                        >Blog Details Page</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </button>
-        <div class="hidden lg:flex">
-          <ul class="lg:flex space-x-4">
-            <li><a class="text-blue-500" href="#">Home</a></li>
-            <li><a class="text-blue-500" href="#">About</a></li>
-            <li><a class="text-blue-500" href="#">Services</a></li>
-            <li><a class="text-blue-500" href="#">Contact</a></li>
+          <div class="hidden sm:flex items-center justify-center">
+            <ul
+              class="md:flex space-x-4 flex items-center dark:text-slate-50 text-slate-900"
+            >
+              <li>
+                <div class="bg-violet-600 p-4 rounded-xl px-8">
+                  <a class="text-slate-50 whitespace-nowrap" href="#"
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="flex gap-2 text-black">
+                  <i class="bi bi-moon" id="moon"></i>
+                  <i
+                    class="bi bi-brightness-high dark:text-slate-100 text-slate-900"
+                    id="sun"
+                  ></i>
+                </div>
+              </li>
+              <li>
+                <button
+                  @click="open = !open"
+                  class="lg:hidden text-slate-950 dark:text-slate-100 focus:outline-none focus:border-2 focus:border-violet-500 focus:ring-violet-500 rounded-md p-2 m-2 font-bold"
+                >
+                  <div class="w-6 h-6 relative focus-visible:border">
+                    <svg
+                      x-show="!open"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                    <svg
+                      x-show="open"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          x-show="open"
+          x-transition:enter="transform ease-out duration-300 transition-translate-opacity"
+          x-transition:enter-start="translate-y-10 opacity-0"
+          x-transition:enter-end="translate-y-0 opacity-100"
+          x-transition:leave="transform ease-in duration-300 transition-translate-opacity"
+          x-transition:leave-start="translate-y-0 opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="relative"
+        >
+          <ul
+            class="p-4 text-slate-500 space-y-4 absolute w-56 bg-white dark:bg-darkBlue rounded-md flex flex-col justify-center right-5 shadow-2xl"
+          >
+            <li><a class="hover:text-violet-700" href="#">Features</a></li>
+            <li><a class="hover:text-violet-700" href="#">About</a></li>
+            <li><a class="hover:text-violet-700" href="#">Pricing</a></li>
+            <li><a class="hover:text-violet-700" href="#">Reviews</a></li>
+            <li><a class="hover:text-violet-700" href="#">Contact</a></li>
+            <li>
+              <div class="relative inline-block group">
+                <a
+                  class="cursor-pointerflex w-48 flex justify-between group-hover:text-violet-700 lg:py-10"
+                  href="#"
+                >
+                  <div>Pages</div>
+                  <div>v</div>
+                </a>
+                <div
+                  class="hidden absolute rounded-md group-hover:block text-slate-950 dark:text-slate-50 bg-white dark:bg-darkBlue w-56 p-4 left-[-16px] z-10"
+                >
+                  <a
+                    href="#"
+                    class="flex items-center justify-start h-10 hover:text-violet-700"
+                    >Blog Grid Page</a
+                  >
+                  <a
+                    href="#"
+                    class="flex items-center justify-start h-10 hover:text-violet-700"
+                    >Blog Details Page</a
+                  >
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
+      </div>
+      <main>
+        <section
+          class="bg-gradient-to-r from-lightPink to-lightCyan dark:from-darkBlue dark:to-lightBlue rounded-2xl py-16 mx-6"
+        >
+          <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
+            <div class="flex flex-col gap-10 mx-auto sm:my-20 w-3/4">
+              <h1
+                class="text-darkBlue dark:text-white text-xl md:text-2xl lg:text-4xl leading-8"
+              >
+                Tailwind CSS Template for
+                <span class="font-medium">Apps and Software</span>
+              </h1>
+              <div class="text-gray-500 text-sm md:font-medium text-justify">
+                All in one Tailwind CSS site template for - App and Software
+                sites. Comes with all essential components, clean design and
+                everything you can expect from a complete app landing page.
+              </div>
+              <div
+                class="flex items-center gap-10 md:justify-start justify-center"
+              >
+                <button class="bg-violet-600 p-4 rounded-xl px-8">
+                  <a
+                    class="text-slate-50 whitespace-nowrap md:text-xl text-sm"
+                    href="#"
+                    >Explore</a
+                  >
+                </button>
+                <div
+                  class="group flex items-center justify-center sm:gap-5 gap-3"
+                >
+                  <div
+                    class="bg-violet-100 group-hover:bg-violet-600 w-14 h-14 rounded-full flex items-center justify-center dark:bg-opacity-10"
+                  >
+                    <i
+                      class="bi bi-play-fill text-3xl text-violet-600 group-hover:text-slate-100 cursor-pointer flex items-center gap-1 justify-center"
+                    ></i>
+                  </div>
+                  <div
+                    class="cursor-pointer text-slate-900 group-hover:text-violet-700 dark:text-slate-100 whitespace-nowrap text-sm md:text-xl"
+                  >
+                    Watch Intro
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 w-full mx-auto flex items-center justify-center">
+              <img src="./images/hero/hero-image-2.svg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section
+          class="container mx-auto leading-normal flex my-20 flex-col items-center justify-center w-full text-center"
+        >
+          <h1 class="text-darkBlue dark:text-white p-4 text-4xl font-bold">
+            Our Recent Awards
+          </h1>
+          <p class="text-gray-400 w-[450px]">
+            There are many variations of passages of Lorem Ipsum available but
+            the majority have suffered alteration in some form.
+          </p>
+        </section>
 
-        <div class="flex gap-2 text-black">
-          <div></div>
+        <section
+          class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-9 my-10 px-6"
+        >
+          <div
+            class="p-10 grid w-full h-full shadow-lg rounded-2xl dark:bg-darkBlue gap-3 mx-auto"
+          >
+            <div class="flex items-center gap-5">
+              <div
+                class="bg-violet-500 rounded-full w-9 h-9 flex items-center justify-center"
+              >
+                <i
+                  class="bi bi-star-fill text-white flex items-center gap-1 justify-center"
+                ></i>
+              </div>
+              <h1 class="text-darkBlue dark:text-white font-bold">
+                4.9 Rating
+              </h1>
+            </div>
+            <div class="flex items-center gap-5">
+              <div class="flex items-center justify-center">
+                <img
+                  src="./images/avard/person-1.png"
+                  class="border-2 border-white rounded-full z-0 left-0 relative"
+                  alt=""
+                />
+                <img
+                  src="./images/avard/person-2.png"
+                  class="border-2 border-white rounded-full z-10 left-[-10px] relative"
+                  alt=""
+                />
+                <img
+                  src="./images/avard/person-3.png"
+                  class="border-2 border-white rounded-full z-20 left-[-20px] relative"
+                  alt=""
+                />
+              </div>
+              <h2 class="text-darkBlue dark:text-white whitespace-nowrap">
+                +195K raters
+              </h2>
+            </div>
+            <p class="text-gray-500 text-sm">
+              Lorem ipsum dolor sit amet, consec adipiscing elit In vulputate
+              vitae massa eu dapibus ligula.
+            </p>
+            <div class="flex items-center text-violet-600 gap-0 font-semibold">
+              <span class="hover:underline text-sm">Rate Out Application </span
+              ><i
+                class="bi bi-arrow-right flex items-center gap-1 justify-center"
+              ></i>
+            </div>
+          </div>
+          <div
+            class="p-10 grid w-full h-full shadow-lg rounded-2xl dark:bg-darkBlue gap-3 mx-auto"
+          >
+            <div class="flex items-center gap-5">
+              <div
+                class="bg-violet-500 rounded-full w-9 h-9 flex items-center justify-center"
+              >
+                <i
+                  class="bi bi-trophy-fill text-white flex items-center gap-1 justify-center"
+                ></i>
+              </div>
+              <h1 class="text-darkBlue dark:text-white font-bold">Awwwards</h1>
+            </div>
+            <div class="text-darkBlue dark:text-white">
+              Best of trendy design in
+              <span class="text-violet-500">2024</span> on Awwwards
+            </div>
+            <p class="text-gray-500 text-sm">
+              Lorem ipsum dolor sit amet, consec adipiscing elit In vulputate
+              vitae massa eu dapibus ligula.
+            </p>
+            <div class="flex items-center text-violet-600 gap-0 font-semibold">
+              <span class="hover:underline text-sm">Go to Awards</span
+              ><i
+                class="bi bi-arrow-right flex items-center gap-1 justify-center"
+              ></i>
+            </div>
+          </div>
+          <div
+            class="p-10 grid w-full h-full shadow-lg rounded-2xl dark:bg-darkBlue gap-3 mx-auto"
+          >
+            <img src="./images/logo/logo.svg" alt="" />
 
-          <i class="bi bi-moon" id="moon"></i>
-          <i class="bi bi-brightness-high" id="sun"></i>
+            <h2 class="text-darkBlue dark:text-white">
+              Appwind is the best app for online payments.
+            </h2>
+
+            <p class="text-gray-500 text-sm">
+              Lorem ipsum dolor sit amet, consec adipiscing elit In vulputate
+              vitae massa eu dapibus ligula.
+            </p>
+            <div class="flex items-center text-violet-600 gap-0 font-semibold">
+              <span class="hover:underline text-sm">Know More </span
+              ><i
+                class="bi bi-arrow-right flex items-center gap-1 justify-center"
+              ></i>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="container mx-auto grid grid-cols-1 lg:grid-cols-2 my-20 px-6"
+        >
+          <div class="p-5 w-full mx-auto flex items-center justify-center">
+            <img src="./images/about/about-image-1.svg" alt="" />
+          </div>
+          <div class="py-20 grid w-full mx-auto gap-2">
+            <div class="text-violet-600 font-semibold text-2xl">
+              About Application
+            </div>
+
+            <h2
+              class="text-darkBlue dark:text-white font-semibold text-3xl lg:text-4xl leading-8"
+            >
+              Instant Payment Transfer SavesYou Time
+            </h2>
+
+            <p class="text-gray-500 text-lg xl:text-xl">
+              Schedule your posts for times when your audience is most active.
+              Choose from our best-time predictions, or create your own
+              publishing schedule.
+            </p>
+            <div class="flex items-center text-violet-600 font-semibold mt-16">
+              <span class="hover:underline text-2xl">Know More About App </span
+              ><i
+                class="bi bi-arrow-right flex items-center gap-1 justify-center"
+              ></i>
+            </div>
+          </div>
+        </section>
+        <section
+          class="container mx-auto grid grid-cols-1 lg:grid-cols-2 my-20 px-6"
+        >
+          <div
+            class="p-5 w-full mx-auto flex items-center justify-center lg:order-last"
+          >
+            <img src="./images/about/about-image-2.svg" alt="" />
+          </div>
+
+          <div class="py-20 grid w-full mx-auto gap-2">
+            <div class="text-violet-600 font-semibold text-2xl">
+              Easy to Manage Appwind
+            </div>
+
+            <h2
+              class="text-darkBlue dark:text-white font-semibold text-3xl lg:text-4xl leading-8"
+            >
+              Manage your online wallet with Appwind.
+            </h2>
+
+            <p class="text-gray-500 text-lg xl:text-xl">
+              Schedule your posts for times when your audience is most active.
+              Choose from our best-time predictions, or create your own
+              publishing schedule.
+            </p>
+            <div class="flex items-center text-violet-600 font-semibold mt-16">
+              <span class="hover:underline text-2xl">Get the App Now!</span
+              ><i
+                class="bi bi-arrow-right flex items-center gap-1 justify-center"
+              ></i>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="container mx-auto leading-normal flex my-20 flex-col items-center justify-center w-full text-center px-6"
+        >
+          <h1 class="text-darkBlue dark:text-white p-4 text-4xl font-bold">
+            How it Works?
+          </h1>
+          <p class="text-gray-400 w-[450px]">
+            There are many variations of passages of Lorem Ipsum available but
+            the majority have suffered alteration in some form.
+          </p>
+        </section>
+
+        <section
+          class="container mx-auto sm:flex flex-wrap lg:flex-nowrap items-center justify-center justify-items-center my-10 px-6"
+          id="con1"
+        ></section>
+
+        <section
+          class="container bg-gradient-to-r from-lightPink to-lightCyan dark:from-darkBlue dark:to-lightBlue rounded-2xl mx-auto px-6"
+        >
+          <div class="container grid grid-cols-1 lg:grid-cols-2">
+            <div class="flex flex-col gap-10 mx-auto p-10">
+              <p class="text-violet-600 text-lg">Download Now!</p>
+              <h1
+                class="text-darkBlue dark:text-white text-xl md:text-2xl lg:text-4xl leading-8"
+              >
+                Download our mobile application.
+              </h1>
+              <div class="text-gray-500 text-sm md:font-medium text-justify">
+                Download Appwind mobile banking app for IOS & Android to manage
+                your online money.
+              </div>
+              <div class="flex items-center gap-5 justify-start">
+                <button
+                  class="bg-violet-600 p-2 pr-6 rounded-xl hover:shadow-5xl hover:shadow-violet-300"
+                >
+                  <a class="text-slate-50 flex items-center text-md" href="#">
+                    <i
+                      class="bi bi-google-play flex items-center gap-1 justify-center"
+                    ></i>
+                    <div class="leading-normal text-start whitespace-nowrap">
+                      <div>Get it on</div>
+                      <div class="whitespace-nowrap">Google Play</div>
+                    </div>
+                  </a>
+                </button>
+                <button
+                  class="bg-darkBlue dark:bg-white p-2 pr-6 rounded-xl hover:shadow-5xl hover:shadow-violet-300"
+                >
+                  <a
+                    class="text-slate-50 dark:text-darkBlue flex items-center text-md"
+                    href="#"
+                  >
+                    <i
+                      class="bi bi-apple flex items-center gap-1 justify-center"
+                    ></i>
+                    <div class="leading-normal text-start whitespace-nowrap">
+                      <div>Download from</div>
+                      <div class="whitespace-nowrap">App Store</div>
+                    </div>
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div
+              class="w-2/5 sm:w-full mx-auto flex items-end justify-center lg:justify-start relative"
+            >
+              <img
+                src="./images/cta/cta-image-1.svg"
+                class="relative z-10"
+                alt=""
+              />
+              <img
+                src="./images/cta/cta-image-2.svg"
+                class="relative left-[-40px] sm:left-4 lg:left-[-40px] xl:left-4 z-0"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="container mx-auto leading-normal flex my-20 flex-col items-center justify-center w-full text-center px-6"
+        >
+          <h1 class="text-darkBlue dark:text-white p-4 text-4xl font-bold">
+            Flexible Plans
+          </h1>
+          <p class="text-gray-400 w-[450px] md:w-[480px]">
+            There are many variations of passages of Lorem Ipsum available but
+            the majority have suffered alteration in some form.
+          </p>
+        </section>
+
+        <section>
+          <div
+            class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-9 my-10 px-6 "
+            id="con2"
+          >
+          
         </div>
-      </div>
-      <div
-        x-show="open"
-        x-transition:enter="transform ease-out duration-300 transition-translate-opacity"
-        x-transition:enter-start="translate-y-10 opacity-0"
-        x-transition:enter-end="translate-y-0 opacity-100"
-        x-transition:leave="transform ease-in duration-300 transition-translate-opacity"
-        x-transition:leave-start="translate-y-0 opacity-100"
-        x-transition:leave-end="translate-y-10 opacity-0"
-        class="lg:hidden"
-      >
-        <ul class="bg-white p-4">
-          <li><a class="text-blue-500" href="#">Home</a></li>
-          <li><a class="text-blue-500" href="#">About</a></li>
-          <li><a class="text-blue-500" href="#">Services</a></li>
-          <li><a class="text-blue-500" href="#">Contact</a></li>
-        </ul>
-      </div>
+        </section>
+
+        <section class="w-full bg-sky-100 py-6 dark:bg-darkBlue">
+          <div class="text-center max-w-lg mx-auto">
+            <p class="text-4xl font-extrabold dark:text-white text-darkBlue">
+              What Clients Say?
+            </p>
+            <p class="text-gray-400 font-semibold mt-4">
+              There are many variations of passages of Lorem Ipsum available but
+              the majority have suffered alteration in some form.
+            </p>
+          </div>
+
+          <div
+            id="con3"
+            class="container p-4 mt-16 mx-auto grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 w-full px-6"
+          >
+          
+        </div>
+        </section>
+
+        <section
+          class="container mx-auto leading-normal flex my-20 flex-col items-center justify-center w-full text-center px-6"
+        >
+          <h1 class="text-darkBlue dark:text-white p-4 text-4xl font-bold">
+            Frequently Asked Questions
+          </h1>
+          <p class="text-gray-400 w-[450px]">
+            There are many variations of passages of Lorem Ipsum available but
+            the majority have suffered alteration in some form.
+          </p>
+        </section>
+
+       <section class="container mx-auto">
+          <section class="relative top-[250px]">
+            <div
+            class="w-[75px] h-[75px] bg-lightCyan bg-opacity-50 rounded-full relative z-10 top-9 right-[-10]"
+                    ></div>
+                    <div
+            class="w-[120px] h-[120px] bg-lightPink bg-opacity-60 rounded-full relative z-0 "
+                    ></div>
+              
+                    <svg
+            width="63"
+            height="30"
+            viewBox="0 0 63 30"
+            class="relative fill-violet-500 z-20 top-[-140px]"
+                    >
+            <circle
+              cx="7.21563"
+              cy="10.1013"
+              r="1.14106"
+              transform="rotate(-118.771 7.21563 10.1013)"
+            ></circle>
+            <circle
+              cx="24.8191"
+              cy="0.43515"
+              r="1.14106"
+              transform="rotate(-118.771 24.8191 0.43515)"
+            ></circle>
+            <circle
+              cx="16.7716"
+              cy="27.5037"
+              r="1.14106"
+              transform="rotate(-118.771 16.7716 27.5037)"
+            ></circle>
+            <circle
+              cx="2.38256"
+              cy="1.2995"
+              r="1.14106"
+              transform="rotate(-118.771 2.38256 1.2995)"
+            ></circle>
+            <circle
+              cx="25.5737"
+              cy="22.6717"
+              r="1.14106"
+              transform="rotate(-118.771 25.5737 22.6717)"
+            ></circle>
+            <circle
+              cx="34.3754"
+              cy="17.8386"
+              r="1.14106"
+              transform="rotate(-118.771 34.3754 17.8386)"
+            ></circle>
+            <circle
+              cx="43.1771"
+              cy="13.0056"
+              r="1.14106"
+              transform="rotate(-118.771 43.1771 13.0056)"
+            ></circle>
+            <circle
+              cx="51.9788"
+              cy="8.17249"
+              r="1.14106"
+              transform="rotate(-118.771 51.9788 8.17249)"
+            ></circle>
+            <circle
+              cx="60.5805"
+              cy="3.44925"
+              r="1.14106"
+              transform="rotate(-118.771 60.5805 3.44925)"
+            ></circle>
+            <circle
+              cx="11.9389"
+              cy="18.7029"
+              r="1.14106"
+              transform="rotate(-118.771 11.9389 18.7029)"
+            ></circle>
+            <circle
+              cx="20.7405"
+              cy="13.8698"
+              r="1.14106"
+              transform="rotate(-118.771 20.7405 13.8698)"
+            ></circle>
+            <circle
+              cx="29.5423"
+              cy="9.0368"
+              r="1.14106"
+              transform="rotate(-118.771 29.5423 9.0368)"
+            ></circle>
+            <circle
+              cx="38.344"
+              cy="4.2038"
+              r="1.14106"
+              transform="rotate(-118.771 38.344 4.2038)"
+            ></circle>
+            <circle
+              cx="47.1458"
+              cy="-0.62915"
+              r="1.14106"
+              transform="rotate(-118.771 47.1458 -0.62915)"
+            ></circle>
+                    </svg>
+          </section>
+  
+        <section
+        class="container mx-auto grid grid-cols-1 lg:grid-cols-2 my-20 px-6 gap-5 relative z-30 top-[-300px]">
+        <div class="border-2 border-gray-300 rounded-xl w-full m-2 p-10 grid gap-8 bg-white dark:bg-indigo-950">
+          <div>
+            <h1 class="text-darkBlue dark:text-white font-semibold text-xl">Which plan is suitable for me?</h1>
+            <p class="text-gray-400">Sed tempor mi at nunc commodo, quis tincidunt turpis finibus. Pellentesque congue neque justo.</p>
+          </div>
+          <div>
+            <h1 class="text-darkBlue dark:text-white font-semibold text-xl">Will I get free future updates?</h1>
+            <p class="text-gray-400">Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique at sit amet elit.</p>
+          </div>
+          <div>
+            <h1 class="text-darkBlue dark:text-white font-semibold text-xl">Do you provide support?</h1>
+            <p class="text-gray-400">Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique.</p>
+          </div>
+        </div>
+
+        <div class="border-2 border-gray-300 rounded-xl w-full m-2 p-10 grid gap-8 bg-white dark:bg-indigo-950">
+          <div>
+            <h1 class="text-darkBlue dark:text-white font-semibold text-xl">Which plan is suitable for me?</h1>
+            <p class="text-gray-400">Sed tempor mi at nunc commodo, quis tincidunt turpis finibus. Pellentesque congue neque justo.</p>
+          </div>
+          <div>
+            <h1 class="text-darkBlue dark:text-white font-semibold text-xl">Will I get free future updates?</h1>
+            <p class="text-gray-400">Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique at sit amet elit.</p>
+          </div>
+          <div>
+            <h1 class="text-darkBlue dark:text-white font-semibold text-xl">Do you provide support?</h1>
+            <p class="text-gray-400">Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique.</p>
+          </div>
+        </div>
+        
+        </section>
+        
+      </section>
+      </main>
+
+      <footer class="text-gray-400 mx-auto p-5">Copyright by Appwind 2024, All rights reserved.
+      </footer>
     </div>
-    <script src="./dist/index.js"></script>
+
+    <a
+      id="scrollup"
+      class="rounded-md bg-violet-600 p-3 fixed bottom-10 right-10 hidden z-50"
+      href="#"
+    >
+      <i class="bi bi-arrow-up text-white"></i>
+    </a>
+
+    <script src="../dist/index.js"></script>
+    <script src="../dist/containerOne.js" type="module"></script>
+    <script src="../dist/containerTwo.js" type="module"></script>
+    <script src="../dist/containerThree.js" type="module"></script>
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"
